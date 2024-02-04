@@ -78,6 +78,18 @@ return {
     ["<S-k>"] = false,
     ["<leader>ch"] = false,
     ["<leader>/"] = false,
+
+
+    --dap 
+    ["<F2>"] = { function() require"dap".terminate() end, desc ="Terminate DAP session" },
+    ["<F3>"] = { function() require"osv".launch({port = 8086}) end, desc = "Launch lua debug server" },
+    ["<F11>"] = { function()  require"dapui".toggle()end,desc = "Toggle DAP UI" },
+    ["<F12>"] = { function()  require"dap.ui.widgets".hover()end, desc = "Hovering" },
+    ["<F4>"] = { function() require"dap".toggle_breakpoint()end, desc = "Toggle breakpoint" },
+    ["<F5>"] = { function() require"dap".continue()end, desc = "DAP continue execution" },
+    ["<F7>"] = { function() require"dap".step_into()end, desc = "DAP step into" },
+    ["<F8>"] = { function() require"dap".step_over()end, desc = "DAP step over" },
+    ["<F9>"] = { function() require"dap".step_out()end, desc = "DAP step out" },
   },
   v = {
 

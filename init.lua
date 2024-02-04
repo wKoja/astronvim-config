@@ -22,7 +22,7 @@ return {
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
-    virtual_text = true,
+    virtual_text = false,
     underline = true,
   },
 
@@ -69,6 +69,18 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    local autocmd = vim.api.nvim_create_autocmd
+
+    autocmd("BufEnter", {
+      command = "silent! set autoindent smartindent",
+    })
+    -- disables automatic commenting on newline:
+    autocmd("filetype", {
+      command = [[setlocal formatoptions-=c formatoptions-=r formatoptions-=o]],
+    })
+
+    -- autocmd BufEnter * silent! set autoindent smartindent
+
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {

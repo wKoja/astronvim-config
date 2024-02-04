@@ -73,7 +73,7 @@ return {
     config = function()
       require("chatgpt").setup {
         -- api_key_cmd = "pass show openai/apikey",
-        api_key_cmd = "cat /home/koja/.config/nvim/apikeys/openai",
+        api_key_cmd = "cat /home/koja/.config/nvim/lua/user/apikeys/openai",
         yank_register = "+",
         edit_with_instructions = {
           diff = false,
@@ -86,7 +86,7 @@ return {
           },
         },
         chat = {
-          welcome_message = WELCOME_MESSAGE,
+          welcome_message = "Hi!",
           loading_text = "Loading, please wait ...",
           question_sign = "",
           answer_sign = "ﮧ",
@@ -219,5 +219,4 @@ return {
     "folke/which-key.nvim",
     enabled = true,
   },
-
 }
