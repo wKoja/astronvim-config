@@ -5,7 +5,7 @@ return {
   -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
 
   { import = "astrocommunity.colorscheme.catppuccin" },
-  { import = "astrocommunity.pack.typescript-all-in-one" },
+  { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.prisma" },
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.lua" },

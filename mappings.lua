@@ -1,8 +1,3 @@
--- Mapping data with "desc" stored directly by vim.keymap.set().
---
--- Please use this mappings table to set keyboard mapping since this is the
--- lower level configuration and more robust one. (which-key will
--- automatically pick-up stored data by this setting.)
 return {
   i = {
     -- navigate within insert mode
@@ -43,7 +38,7 @@ return {
       function() require("ufo").closeAllFolds() end,
     },
 
-    ["<C-w>b"] = { ":Bdelete other<CR>", desc = "Close other buffers" },
+    ["<C-w>b"] = { ":Bdelete other<CR><CR>", desc = "Close other buffers" },
 
     -- comment line
     ["<C-_>"] = {
