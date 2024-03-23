@@ -16,6 +16,11 @@ return {
       highlighturl = true, -- highlight URLs at start
       notifications = true, -- enable notifications at start
     },
+    -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
+    diagnostics = {
+      virtual_text = false,
+      underline = true,
+    },
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
