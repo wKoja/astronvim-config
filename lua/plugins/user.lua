@@ -79,7 +79,7 @@ return {
   },
 
   {
-    "rcasia/neotest-java"
+    "rcasia/neotest-java",
   },
 
   {
@@ -91,14 +91,14 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
     config = function()
-      require('neotest').setup{
+      require("neotest").setup {
         adapters = {
-          require('neotest-java')({
-            ignore_wrapper = false
-          })
-        }
+          require "neotest-java" {
+            ignore_wrapper = false,
+          },
+        },
       }
-    end
+    end,
   },
 
   {
@@ -145,7 +145,10 @@ return {
       end
     end,
   },
-
+  { "rcarriga/nvim-dap-ui",
+    version = false,
+    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }
+  },
   {
     "kevinhwang91/nvim-ufo",
     dependencies = {
