@@ -145,9 +145,10 @@ return {
       end
     end,
   },
-  { "rcarriga/nvim-dap-ui",
+  {
+    "rcarriga/nvim-dap-ui",
     version = false,
-    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }
+    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
   },
   {
     "kevinhwang91/nvim-ufo",
