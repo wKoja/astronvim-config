@@ -79,16 +79,14 @@ return {
   },
 
   {
-    "rcasia/neotest-java",
-  },
-
-  {
     "nvim-neotest/neotest",
     dependencies = {
       "nvim-neotest/nvim-nio",
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
+      "marilari88/neotest-vitest",
+      "rcasia/neotest-java",
     },
     config = function()
       require("neotest").setup {
@@ -96,53 +94,9 @@ return {
           require "neotest-java" {
             ignore_wrapper = false,
           },
+          require "neotest-vitest",
         },
       }
-    end,
-  },
-
-  {
-    "mfussenegger/nvim-dap",
-    dependencies = {
-      "mxsdev/nvim-dap-vscode-js",
-      {
-        "microsoft/vscode-js-debug",
-        version = "1.x",
-        build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
-      },
-    },
-    config = function()
-      local dap = require "dap"
-      require("dap-vscode-js").setup {
-        adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" },
-        debugger_path = vim.fn.stdpath "data" .. "/lazy/vscode-js-debug",
-      }
-
-      for _, language in ipairs { "typescript", "javascript" } do
-        dap.configurations[language] = {
-          {
-            type = "pwa-node",
-            request = "launch",
-            name = "Launch file",
-            program = "${file}",
-            cwd = "${workspaceFolder}",
-          },
-          {
-            type = "pwa-node",
-            request = "attach",
-            name = "Attach",
-            processId = require("dap.utils").pick_process,
-            cwd = "${workspaceFolder}",
-          },
-          {
-            type = "pwa-node",
-            request = "attach",
-            name = "Attach SvelteKit server",
-            processId = require("dap.utils").pick_process,
-            cwd = "${workspaceFolder}",
-          },
-        }
-      end
     end,
   },
   {
@@ -334,7 +288,7 @@ return {
           },
         },
         openai_params = {
-          model = "gpt-4-1106-preview",
+          model = "gpt-4o",
           frequency_penalty = 0,
           presence_penalty = 0,
           max_tokens = 3000,
@@ -343,7 +297,7 @@ return {
           n = 1,
         },
         openai_edit_params = {
-          model = "gpt-4-1106-preview",
+          model = "gpt-4o",
           temperature = 0,
           top_p = 1,
           n = 1,
@@ -375,5 +329,12 @@ return {
   {
     "folke/which-key.nvim",
     enabled = true,
+  },
+
+  {
+    "olexsmir/gopher.nvim",
+    ft = "go",
+    config = function(_, opts) require("gopher").setup(opts) end,
+    build = function() vim.cmd [[silent! GoInstallDeps]] end,
   },
 }
