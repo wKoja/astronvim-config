@@ -116,9 +116,9 @@ return {
         ["<Leader>e"] = {
           function()
             if vim.bo.filetype == "neo-tree" then
-              vim.cmd.wincmd "p"
+              vim.cmd.Neotree "toggle"
             else
-              vim.cmd.Neotree "focus"
+              vim.cmd.Neotree "left"
             end
           end,
           desc = "Toggle Explorer Focus",
