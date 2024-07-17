@@ -6,10 +6,9 @@
 return {
   { "AstroNvim/astrocommunity" },
   { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.svelte" },
-  { import = "astrocommunity.pack.go" },
-  { import = "astrocommunity.pack.sql" },
   { import = "astrocommunity.pack.prisma" },
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.lua" },
@@ -19,6 +18,5 @@ return {
   -- { import = "astrocommunity.bars-and-lines.heirline-mode-text-statusline" },
   { import = "astrocommunity.code-runner.sniprun" },
   { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
-  { import = "astrocommunity.git.git-blame-nvim" },
   -- import/override with your plugins folder
 }

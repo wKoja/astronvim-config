@@ -119,11 +119,6 @@ return {
   },
 
   {
-    "mattn/emmet-vim",
-    lazy = false,
-  },
-
-  {
     "christoomey/vim-tmux-navigator",
     lazy = false,
   },
