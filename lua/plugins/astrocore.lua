@@ -118,7 +118,7 @@ return {
             if vim.bo.filetype == "neo-tree" then
               vim.cmd.Neotree "toggle"
             else
-              vim.cmd.Neotree "left"
+              vim.cmd.Neotree "reveal"
             end
           end,
           desc = "Toggle Explorer Focus",

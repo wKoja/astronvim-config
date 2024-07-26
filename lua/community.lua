@@ -8,6 +8,8 @@ return {
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.pack.svelte" },
   { import = "astrocommunity.pack.prisma" },
   { import = "astrocommunity.pack.tailwindcss" },

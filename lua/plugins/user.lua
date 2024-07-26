@@ -283,7 +283,7 @@ return {
           },
         },
         openai_params = {
-          model = "gpt-4o",
+          model = "gpt-4o-mini",
           frequency_penalty = 0,
           presence_penalty = 0,
           max_tokens = 3000,
@@ -319,11 +319,6 @@ return {
         to_clipboard = true,
       }
     end,
-  },
-
-  {
-    "folke/which-key.nvim",
-    enabled = true,
   },
 
   {

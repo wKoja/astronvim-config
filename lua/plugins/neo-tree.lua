@@ -5,5 +5,10 @@ return {
     opts.window = {
       position = "float",
     }
+    opts.buffers = {
+      follow_current_file = {
+        enabled = true
+      }
+    }
   end,
 }
