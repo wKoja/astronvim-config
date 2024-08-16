@@ -45,15 +45,26 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      lua_ls = {
+        settings = {
+          Lua = {
+            workspace = {
+              library = {
+                ["~/.config/awesome/awesome-code-doc"] = true,
+              },
+            },
+          },
+        },
+      },
       gopls = {
         settings = {
           gopls = {
             analyses = {
-              ST1003 = false
-            }
-          }
-        }
-      }
+              ST1003 = false,
+            },
+          },
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {
