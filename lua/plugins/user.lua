@@ -327,4 +327,13 @@ return {
     config = function(_, opts) require("gopher").setup(opts) end,
     build = function() vim.cmd [[silent! GoInstallDeps]] end,
   },
+
+  {
+    "Exafunction/codeium.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    config = function() require("codeium").setup {} end,
+  },
 }
