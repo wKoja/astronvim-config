@@ -82,6 +82,7 @@ return {
     "nvim-neotest/neotest",
     dependencies = {
       "nvim-neotest/nvim-nio",
+      "nvim-neotest/neotest-python",
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
@@ -95,6 +96,9 @@ return {
             ignore_wrapper = false,
           },
           require "neotest-vitest",
+          require "neotest-python" {
+            dap = { justMyCode = false },
+          },
         },
       }
     end,
@@ -156,6 +160,7 @@ return {
   {
     "jackMort/ChatGPT.nvim",
     event = "VeryLazy",
+    commit = "a8a9670d6c24a8c8f0eefd20aeb8b77e111ff8c2",
     dependencies = {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
@@ -292,7 +297,7 @@ return {
           n = 1,
         },
         openai_edit_params = {
-          model = "gpt-4o",
+          model = "gpt-4o-mini",
           temperature = 0,
           top_p = 1,
           n = 1,
@@ -305,6 +310,8 @@ return {
   },
 
   -- lazy stuff
+
+  { "nvim-pack/nvim-spectre" },
 
   {
     "michaelrommel/nvim-silicon",
@@ -330,10 +337,15 @@ return {
 
   {
     "Exafunction/codeium.nvim",
+    commit = "937667b2cadc7905e6b9ba18ecf84694cf227567",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "hrsh7th/nvim-cmp",
     },
-    config = function() require("codeium").setup {} end,
+    config = function()
+      require("codeium").setup {
+        enable_chat = true,
+      }
+    end,
   },
 }
