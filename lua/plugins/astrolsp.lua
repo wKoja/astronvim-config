@@ -50,7 +50,8 @@ return {
           Lua = {
             workspace = {
               library = {
-                ["~/.config/awesome/awesome-code-doc"] = true,
+                vim.fn.expand "~/.config/awesome/awesome-code-doc",
+                vim.fn.expand "$VIMRUNTIME/lua",
               },
             },
           },

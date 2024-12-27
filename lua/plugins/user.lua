@@ -160,7 +160,6 @@ return {
   {
     "jackMort/ChatGPT.nvim",
     event = "VeryLazy",
-    commit = "a8a9670d6c24a8c8f0eefd20aeb8b77e111ff8c2",
     dependencies = {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
@@ -288,17 +287,18 @@ return {
           },
         },
         openai_params = {
-          model = "gpt-4o-mini",
+          model = "gpt-4o",
           frequency_penalty = 0,
           presence_penalty = 0,
-          max_tokens = 3000,
+          max_tokens = 4096,
           temperature = 0,
           top_p = 1,
           n = 1,
         },
         openai_edit_params = {
-          model = "gpt-4o-mini",
+          model = "gpt-4o",
           temperature = 0,
+          max_tokens = 4096,
           top_p = 1,
           n = 1,
         },
