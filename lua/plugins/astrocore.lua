@@ -140,7 +140,7 @@ return {
 
         --dap
         ["<Leader>rt"] = { function() require("neotest").run.run() end, desc = "Run test" },
-        ["<Leader>rd"] = { function() require("jdtls.dap").test_nearest_method() end, desc = "Debug test" },
+        ["<Leader>rd"] = { function() require("neotest").run.run({strategy = "dap"}) end, desc = "Debug test" },
         ["<Leader>rT"] = { function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run all tests in the file" },
         ["<F2>"] = { function() require("dap").terminate() end, desc = "Terminate DAP session" },
         ["<F3>"] = { function() require("osv").launch { port = 8086 } end, desc = "Launch lua debug server" },

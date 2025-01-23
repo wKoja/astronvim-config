@@ -1,3 +1,4 @@
+local util = require "lspconfig.util"
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -75,6 +76,13 @@ return {
       -- the key is the server that is being setup with `lspconfig`
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
       -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end -- or a custom handler function can be passed
+      -- lexical = function(_, opts)
+      --   require("lspconfig").lexical.setup(opts) {
+      --     cmd = { "/home/koja/projects/misc/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
+      --     root_dir = function(fname) return util.root_pattern("mix.exs", ".git")(fname) or vim.loop.cwd() end,
+      --     filetypes = { "elixir", "eelixir", "heex" },
+      --   }
+      -- end,
     },
     -- Configure buffer local auto commands to add when attaching a language server
     autocmds = {

@@ -86,18 +86,15 @@ return {
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
-      "marilari88/neotest-vitest",
-      "rcasia/neotest-java",
     },
     config = function()
       require("neotest").setup {
         adapters = {
-          require "neotest-java" {
-            ignore_wrapper = false,
-          },
-          require "neotest-vitest",
           require "neotest-python" {
             dap = { justMyCode = false },
+            is_test_file = function(file_path)
+              return file_path:match "test"
+            end,
           },
         },
       }
