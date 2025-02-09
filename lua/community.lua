@@ -7,8 +7,6 @@ return {
   { "AstroNvim/astrocommunity" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
-  { import = "astrocommunity.colorscheme.kanagawa-nvim" },
-  { import = "astrocommunity.colorscheme.kanagawa-paper-nvim" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.go" },
   -- { import = "astrocommunity.pack.astro" },
