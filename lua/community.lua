@@ -11,7 +11,6 @@ return {
   { import = "astrocommunity.pack.go" },
   -- { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.pack.svelte" },
-  { import = "astrocommunity.pack.ruby" },
   { import = "astrocommunity.pack.prisma" },
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.lua" },
@@ -21,5 +20,5 @@ return {
   -- { import = "astrocommunity.bars-and-lines.heirline-mode-text-statusline" },
   { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
   -- import/override with your plugins folder
-  { import = "astrocommunity.code-runner.sniprun" },
+  { import = "astrocommunity.completion.blink-cmp" },
 }

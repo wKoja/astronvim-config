@@ -94,6 +94,10 @@ return {
         ["<C-j>"] = { "<cmd>TmuxNavigateDown<CR>", desc = "Window down" },
         ["<C-k>"] = { "<cmd>TmuxNavigateUp<CR>", desc = "Window up" },
 
+        -- LLM tools
+        ["<Leader>aa"] = {"<cmd>CodeCompanionChat<CR>", desc = "CodeCompanionChat"},
+        ["<Leader>ac"] = {"<cmd>CodeCompanionActions<CR>", desc = "CodeCompanionActions"},
+
         -- ufo
         ["zR"] = {
           function() require("ufo").openAllFolds() end,
