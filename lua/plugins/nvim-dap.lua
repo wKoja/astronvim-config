@@ -2,6 +2,7 @@
 return {
   "jay-babu/mason-nvim-dap.nvim",
   opts = {
+    automatic_setup = true,
     handlers = {
       python = function(source_name)
         local dap = require "dap"
@@ -23,7 +24,7 @@ return {
               "--debug",
               "--reload",
             },
-            justMyCode = true,
+            justMyCode = false,
             cwd = "${workspaceFolder}",
           },
           {

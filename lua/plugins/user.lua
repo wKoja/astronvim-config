@@ -172,6 +172,16 @@ return {
   },
 
   {
+    "monkoose/neocodeium",
+    event = "VeryLazy",
+    config = function()
+      local neocodeium = require "neocodeium"
+      neocodeium.setup()
+      vim.keymap.set("i", "<A-f>", neocodeium.accept)
+    end,
+  },
+
+  {
     "olimorris/codecompanion.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -185,6 +195,11 @@ return {
               env = {
                 api_key = "cmd:cat /home/koja/.config/nvim/extra/openai",
               },
+              schema = {
+                model = {
+                  default = "o3-mini",
+                }
+              }
             })
           end,
         },
