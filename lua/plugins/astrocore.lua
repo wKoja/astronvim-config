@@ -19,7 +19,7 @@ return {
     -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
     diagnostics = {
       virtual_text = false,
-      underline = true,
+      virtual_lines = false,
     },
     -- vim options can be configured here
     options = {
@@ -98,22 +98,7 @@ return {
         ["<Leader>aa"] = { "<cmd>CodeCompanionChat<CR>", desc = "CodeCompanionChat" },
         ["<Leader>ac"] = { "<cmd>CodeCompanionActions<CR>", desc = "CodeCompanionActions" },
 
-        -- ufo
-        ["zR"] = {
-          function() require("ufo").openAllFolds() end,
-        },
-        ["zM"] = {
-          function() require("ufo").closeAllFolds() end,
-        },
-
         ["<C-w>b"] = { ":Bdelete other<CR><CR>", desc = "Close other buffers" },
-
-        -- comment line
-        ["<C-_>"] = {
-          function() require("Comment.api").toggle.linewise.current() end,
-
-          desc = " toggle comment",
-        },
 
         -- neotree
         -- ["<C-n>"] = { "<cmd>Neotree toggle<cr>", desc = "Toggle explorer" },
@@ -161,13 +146,8 @@ return {
       },
       v = {
 
-        ["<Leader>sc"] = { "<cmd>Silicon<cr>", desc = "Silicon Print" },
+        ["<Leader>sc"] = { function() require("nvim-silicon").clip() end, desc = "Silicon Print" },
 
-        -- comment
-        ["<C-_>"] = {
-          "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
-          desc = " toggle comment",
-        },
         -- disabled
         ["<Leader>/"] = false,
       },

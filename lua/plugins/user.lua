@@ -15,28 +15,6 @@ return {
 
   -- == Examples of Overriding Plugins ==
 
-  -- customize alpha options
-  {
-    "goolord/alpha-nvim",
-    opts = function(_, opts)
-      -- customize the dashboard header
-      opts.section.header.val = {
-        " █████  ███████ ████████ ██████   ██████",
-        "██   ██ ██         ██    ██   ██ ██    ██",
-        "███████ ███████    ██    ██████  ██    ██",
-        "██   ██      ██    ██    ██   ██ ██    ██",
-        "██   ██ ███████    ██    ██   ██  ██████",
-        " ",
-        "    ███    ██ ██    ██ ██ ███    ███",
-        "    ████   ██ ██    ██ ██ ████  ████",
-        "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-        "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-        "    ██   ████   ████   ██ ██      ██",
-      }
-      return opts
-    end,
-  },
-
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   {
     "L3MON4D3/LuaSnip",
@@ -102,19 +80,6 @@ return {
     "rcarriga/nvim-dap-ui",
     version = false,
     dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
-  },
-  {
-    "kevinhwang91/nvim-ufo",
-    dependencies = {
-      "kevinhwang91/promise-async",
-    },
-    opts = {
-      foldcolumn = "1",
-      foldlevel = 99,
-      foldlevelstart = 99,
-      foldenable = true,
-    },
-    lazy = false,
   },
 
   {
