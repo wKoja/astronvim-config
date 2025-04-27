@@ -24,7 +24,7 @@ return {
               "--debug",
               "--reload",
             },
-            justMyCode = false,
+            justMyCode = true,
             cwd = "${workspaceFolder}",
           },
           {

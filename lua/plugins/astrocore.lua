@@ -79,8 +79,6 @@ return {
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
-        -- quick save
-        -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
 
         ["<Leader>x"] = { function() require("astrocore.buffer").close() end, desc = "Close buffer" },
 
@@ -88,20 +86,12 @@ return {
         ["<C-d>"] = { "<C-d>zz", desc = "Half-page down and centers the cursor" },
         ["<C-u>"] = { "<C-u>zz", desc = "Half-page up and centers the cursor" },
 
-        -- tmux navigation
-        ["<C-h>"] = { "<cmd>TmuxNavigateLeft<CR>", desc = "Window left" },
-        ["<C-l>"] = { "<cmd>TmuxNavigateRight<CR>", desc = "Window right" },
-        ["<C-j>"] = { "<cmd>TmuxNavigateDown<CR>", desc = "Window down" },
-        ["<C-k>"] = { "<cmd>TmuxNavigateUp<CR>", desc = "Window up" },
-
         -- LLM tools
         ["<Leader>aa"] = { "<cmd>CodeCompanionChat<CR>", desc = "CodeCompanionChat" },
         ["<Leader>ac"] = { "<cmd>CodeCompanionActions<CR>", desc = "CodeCompanionActions" },
 
         ["<C-w>b"] = { ":Bdelete other<CR><CR>", desc = "Close other buffers" },
 
-        -- neotree
-        -- ["<C-n>"] = { "<cmd>Neotree toggle<cr>", desc = "Toggle explorer" },
         ["<Leader>e"] = {
           function()
             if vim.bo.filetype == "neo-tree" then
@@ -134,6 +124,7 @@ return {
           function() require("neotest").run.run(vim.fn.expand "%") end,
           desc = "Run all tests in the file",
         },
+        ["<Leader>de"] = { function() require("dapui").eval() end, desc = "Evaluate expression" },
         ["<F2>"] = { function() require("dap").terminate() end, desc = "Terminate DAP session" },
         ["<F3>"] = { function() require("osv").launch { port = 8086 } end, desc = "Launch lua debug server" },
         ["<F11>"] = { function() require("dapui").toggle() end, desc = "Toggle DAP UI" },
@@ -145,6 +136,9 @@ return {
         ["<F9>"] = { function() require("dap").step_out() end, desc = "DAP step out" },
       },
       v = {
+
+        -- dap
+        ["<Leader>de"] = { function() require("dapui").eval() end, desc = "Evaluate expression" },
 
         ["<Leader>sc"] = { function() require("nvim-silicon").clip() end, desc = "Silicon Print" },
 
