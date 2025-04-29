@@ -142,6 +142,9 @@ return {
 
         ["<Leader>sc"] = { function() require("nvim-silicon").clip() end, desc = "Silicon Print" },
 
+        -- AI tools
+        ["<Leader>ac"] = { "<cmd>CodeCompanionActions<CR>", desc = "CodeCompanionActions" },
+
         -- disabled
         ["<Leader>/"] = false,
       },

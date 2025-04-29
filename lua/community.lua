@@ -14,6 +14,7 @@ return {
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.java" },
+  { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.bash" },
   -- { import = "astrocommunity.bars-and-lines.heirline-mode-text-statusline" },
