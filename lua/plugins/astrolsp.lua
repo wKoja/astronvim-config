@@ -78,6 +78,9 @@ return {
           },
         },
       },
+      elixirls = {
+        cmd = { "/home/koja/.local/share/nvim/mason/packages/elixir-ls/language_server.sh" },
+      },
     },
     -- customize how language servers are attached
     handlers = {

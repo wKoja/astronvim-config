@@ -104,8 +104,13 @@ return {
         },
 
         -- terminal
-        ["<A-h>"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "ToggleTerm horizontal split" },
         ["<A-i>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
+
+        --smart splits
+        ["<A-h>"] = { function() require("smart-splits").resize_left() end, desc = "Resize left" },
+        ["<A-j>"] = { function() require("smart-splits").resize_down() end, desc = "Resize left" },
+        ["<A-k>"] = { function() require("smart-splits").resize_up() end, desc = "Resize left" },
+        ["<A-l>"] = { function() require("smart-splits").resize_right() end, desc = "Resize left" },
 
         -- disabled
         ["<C-s>"] = false,

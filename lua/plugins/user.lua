@@ -15,6 +15,17 @@ return {
 
   -- == Examples of Overriding Plugins ==
 
+  -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
+  {
+    "L3MON4D3/LuaSnip",
+    config = function(plugin, opts)
+      require "astronvim.plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
+      -- add more custom luasnip configuration such as filetype extend or custom snippets
+      local luasnip = require "luasnip"
+      luasnip.filetype_extend("javascript", { "javascriptreact" })
+    end,
+  },
+
   {
     "nvim-neotest/neotest",
     dependencies = {
@@ -95,14 +106,14 @@ return {
     config = function()
       require("codecompanion").setup {
         adapters = {
-          openai = function()
-            return require("codecompanion.adapters").extend("openai", {
+          xai = function()
+            return require("codecompanion.adapters").extend("xai", {
               env = {
-                api_key = "cmd:cat /home/koja/.config/nvim/extra/openai",
+                api_key = "cmd:cat /home/koja/.config/nvim/extra/grok",
               },
               schema = {
                 model = {
-                  default = "o3-mini",
+                  default = "grok-4-0709",
                 },
               },
             })
@@ -110,10 +121,10 @@ return {
         },
         strategies = {
           chat = {
-            adapter = "openai",
+            adapter = "xai",
           },
           inline = {
-            adapter = "openai",
+            adapter = "xai",
           },
         },
       }

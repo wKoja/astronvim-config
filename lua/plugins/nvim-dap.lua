@@ -40,6 +40,15 @@ return {
             },
           },
         }
+        dap.configurations.java = {
+          {
+            type = "java",
+            request = "attach",
+            name = "Attach to Quarkus",
+            hostName = "127.0.0.1",
+            port = 5005,
+          },
+        }
       end,
     },
   },
