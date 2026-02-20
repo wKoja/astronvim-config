@@ -96,38 +96,4 @@ return {
       }
     end,
   },
-
-  {
-    "olimorris/codecompanion.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    config = function()
-      require("codecompanion").setup {
-        adapters = {
-          xai = function()
-            return require("codecompanion.adapters").extend("xai", {
-              env = {
-                api_key = "cmd:cat /home/koja/.config/nvim/extra/grok",
-              },
-              schema = {
-                model = {
-                  default = "grok-4-0709",
-                },
-              },
-            })
-          end,
-        },
-        strategies = {
-          chat = {
-            adapter = "xai",
-          },
-          inline = {
-            adapter = "xai",
-          },
-        },
-      }
-    end,
-  },
 }

@@ -92,14 +92,9 @@ return {
 
         ["<C-w>b"] = { ":Bdelete other<CR><CR>", desc = "Close other buffers" },
 
+        -- file explorer
         ["<Leader>e"] = {
-          function()
-            if vim.bo.filetype == "neo-tree" then
-              vim.cmd.Neotree "toggle"
-            else
-              vim.cmd.Neotree "reveal"
-            end
-          end,
+          "<cmd>Yazi<CR>",
           desc = "Toggle Explorer Focus",
         },
 
@@ -146,9 +141,6 @@ return {
         ["<Leader>de"] = { function() require("dapui").eval() end, desc = "Evaluate expression" },
 
         ["<Leader>sc"] = { function() require("nvim-silicon").clip() end, desc = "Silicon Print" },
-
-        -- AI tools
-        ["<Leader>ac"] = { "<cmd>CodeCompanionActions<CR>", desc = "CodeCompanionActions" },
 
         -- disabled
         ["<Leader>/"] = false,
