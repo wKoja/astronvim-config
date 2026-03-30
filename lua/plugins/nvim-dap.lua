@@ -4,21 +4,13 @@ return {
   opts = {
     automatic_setup = true,
     handlers = {
-      python = function(source_name)
+      python = function(_)
         local dap = require "dap"
         dap.adapters.python = {
           type = "executable",
           command = "debugpy-adapter",
         }
         dap.configurations.python = {
-          {
-            name = "Debug: Current file",
-            type = "python",
-            request = "launch",
-            program = "${file}",
-            justMyCode = true,
-            cwd = "${workspaceFolder}",
-          },
           {
             name = "Debug: Flask",
             type = "python",
@@ -27,10 +19,18 @@ return {
             justMyCode = true,
             cwd = "${workspaceFolder}",
             args = function()
-              local app = vim.fn.input("Flask app module [app]: ", "app")
-              local port = vim.fn.input("Port [5000]: ", "5000")
+              local app = "grafiniti_api"
+              local port = "8080"
               return { "--app", app, "run", "--port", port, "--debug" }
             end,
+          },
+          {
+            name = "Debug: Current file",
+            type = "python",
+            request = "launch",
+            program = "${file}",
+            justMyCode = true,
+            cwd = "${workspaceFolder}",
           },
           {
             name = "Debug: FastAPI",
@@ -87,18 +87,45 @@ return {
           },
         }
       end,
-      java = function(source_name)
-        local dap = require "dap"
-        dap.configurations.java = {
-          {
-            type = "java",
-            request = "attach",
-            name = "Attach to Quarkus",
-            hostName = "127.0.0.1",
-            port = 5005,
-          },
-        }
-      end,
     },
   },
+  config = function(_, opts)
+    require("mason-nvim-dap").setup(opts)
+    local dap = require "dap"
+    dap.configurations.java = {
+      {
+        type = "java",
+        request = "launch",
+        name = "Launch: Current file",
+        mainClass = "${file}",
+      },
+      {
+        type = "java",
+        request = "launch",
+        name = "Launch: Main class",
+        mainClass = function() return vim.fn.input("Main class: ", "") end,
+      },
+      {
+        type = "java",
+        request = "attach",
+        name = "Attach to Quarkus (port 5005)",
+        hostName = "127.0.0.1",
+        port = 5005,
+      },
+      {
+        type = "java",
+        request = "attach",
+        name = "Attach to Javalin (port 5005)",
+        hostName = "127.0.0.1",
+        port = 5005,
+      },
+      {
+        type = "java",
+        request = "attach",
+        name = "Attach to JVM (custom port)",
+        hostName = "127.0.0.1",
+        port = function() return tonumber(vim.fn.input("Debug port [5005]: ", "5005")) end,
+      },
+    }
+  end,
 }
