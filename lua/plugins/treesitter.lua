@@ -1,14 +1,7 @@
--- Customize Treesitter
+-- nvim-treesitter is now only a download utility in v6
+-- Treesitter configuration is handled via AstroCore's `treesitter` key
 
 ---@type LazySpec
 return {
   "nvim-treesitter/nvim-treesitter",
-  opts = function(_, opts)
-    -- add more things to the ensure_installed table protecting against community packs modifying it
-    opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
-      "lua",
-      "vim",
-      -- add more arguments for adding more treesitter parsers
-    })
-  end,
 }

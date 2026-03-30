@@ -3,7 +3,7 @@
 ---@type LazySpec
 return {
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       pip = {
         upgrade_pip = false,

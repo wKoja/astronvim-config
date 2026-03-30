@@ -1,6 +1,6 @@
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
--- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
+-- NOTE: We highly recommend setting up the Lua Language Server (`:MasonInstall lua-language-server`)
 --       as this provides autocomplete and documentation while editing
 
 ---@type LazySpec
@@ -15,6 +15,11 @@ return {
       cmp = true, -- enable completion at start
       highlighturl = true, -- highlight URLs at start
       notifications = true, -- enable notifications at start
+    },
+    -- Treesitter configuration (moved from nvim-treesitter opts in v6)
+    treesitter = {
+      ensure_installed = { "lua", "vim" },
+      highlight = true,
     },
     -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
     diagnostics = {
