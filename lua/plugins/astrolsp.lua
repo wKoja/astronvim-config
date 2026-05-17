@@ -63,6 +63,7 @@ return {
               library = {
                 vim.fn.expand "~/.config/awesome/awesome-code-doc",
                 vim.fn.expand "$VIMRUNTIME/lua",
+                vim.fn.expand "~/.config/hypr/hypr-code-doc"
               },
             },
           },

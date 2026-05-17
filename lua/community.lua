@@ -17,10 +17,15 @@ return {
   -- { import = "astrocommunity.pack.java" },
   -- { import = "astrocommunity.pack.elixir-phoenix" },
   -- { import = "astrocommunity.pack.rust" },
-  { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.python.base" },
+  { import = "astrocommunity.pack.python.basedpyright" },
+  { import = "astrocommunity.pack.python.isort" },
+  { import = "astrocommunity.pack.python.black" },
+  { import = "astrocommunity.pack.python.ruff" },
   { import = "astrocommunity.pack.bash" },
   -- { import = "astrocommunity.bars-and-lines.heirline-mode-text-statusline" },
   { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
   -- import/override with your plugins folder
   { import = "astrocommunity.file-explorer.yazi-nvim" },
+  { import = "astrocommunity.file-explorer.fyler-nvim" },
 }
