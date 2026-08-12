@@ -103,6 +103,8 @@ return {
           desc = "Toggle Explorer Focus",
         },
 
+        ["<Leader>w"] = { function() require("fyler").toggle() end, desc = "Toggle Explorer" },
+
         -- terminal
         ["<A-i>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
 

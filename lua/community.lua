@@ -16,6 +16,7 @@ return {
   { import = "astrocommunity.pack.lua" },
   -- { import = "astrocommunity.pack.java" },
   -- { import = "astrocommunity.pack.elixir-phoenix" },
+  { import = "astrocommunity.pack.elixir" },
   -- { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.python.base" },
   { import = "astrocommunity.pack.python.basedpyright" },
@@ -28,4 +29,5 @@ return {
   -- import/override with your plugins folder
   { import = "astrocommunity.file-explorer.yazi-nvim" },
   { import = "astrocommunity.file-explorer.fyler-nvim" },
+  { import = "astrocommunity.file-explorer.telescope-file-browser-nvim" }
 }
